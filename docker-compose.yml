@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    
+    environment:
+      - SECRET_KEY=django-insecure-ayeo-1z6o="c^-i($$dg76)@=w#pu$5a3(vv7*ap+(znxizb)@pf"
+      - DEBUG=1
+      - DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
+      - DJANGO_SETTINGS_MODULE=clickandbuy.settings
